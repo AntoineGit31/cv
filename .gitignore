@@ -1,6 +1,8 @@
 # Allowlist: new files stay local until explicitly reviewed.
 /*
 !/index.html
+!/robots.txt
+!/sitemap.xml
 !/styles.css
 !/beyond.css
 !/sports.css

@@ -1,6 +1,8 @@
 # Upload only reviewed build inputs, never local working documents.
 /*
 !/index.html
+!/robots.txt
+!/sitemap.xml
 !/styles.css
 !/beyond.css
 !/sports.css

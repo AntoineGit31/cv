@@ -18,7 +18,7 @@ export function audit() {
     assert(names.has(name), `Resource absent from public manifest: ${name}`);
   };
   for (const file of files) {
-    assert(/^[A-Za-z0-9_.-]+\.(?:html|css|js|jpg|png|webp|svg|pdf)$/.test(file), "Unsafe manifest path");
+    assert(/^[A-Za-z0-9_.-]+\.(?:html|css|js|jpg|png|webp|svg|pdf)$/.test(file) || ["robots.txt", "sitemap.xml"].includes(file), "Unsafe manifest path");
     assert(!privateFiles.includes(file), `Private file in manifest: ${file}`);
     const info = lstatSync(resolve(root, file));
     assert(info.isFile() && !info.isSymbolicLink(), `Not a regular file: ${file}`);
