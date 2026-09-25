@@ -46,21 +46,7 @@ une galerie interactive.
 
 ## Ouvrir le projet
 
-Le site repose sur **HTML, CSS et JavaScript**, sans framework ni dépendance npm
-tierce. Il est adapté aux petits écrans et tient compte de la préférence de
-réduction des animations.
-
-Avec **Node.js 24** et **Python 3**, double-cliquer sur
-[`Lancer-le-site.bat`](Lancer-le-site.bat), puis ouvrir **http://127.0.0.1:8080**.
-Le lanceur construit le site et démarre le serveur local.
-
-Pour le lancer depuis un terminal :
-
-```sh
-npm ci --ignore-scripts
-npm run build
-py -3 -m http.server 8080 --bind 127.0.0.1 --directory dist
-```
+[Découvrir le CV interactif ↗](https://cv-antoine-goudedranche.vercel.app/)
 
 <details>
 <summary>Construction, publication et sécurité</summary>
