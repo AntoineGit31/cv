@@ -1,0 +1,82 @@
+/* Open illustrated posters over the photograph; paper surfaces inside dialogs. */
+.beyond { min-height: auto; color: #f4f1e7; background: linear-gradient(180deg, rgba(7, 19, 14, .64), rgba(7, 19, 14, .79)), url("background3.jpg") center 61% / cover no-repeat; box-shadow: none; }
+.beyond::before, .beyond::after { content: none; }
+.beyond__inner { width: min(86vw, 1120px); padding: 48px 0 36px; }
+.beyond__topnav { margin-bottom: 74px; }
+.beyond__topnav a, .beyond__footer a { color: #d5dccf; font-size: .75rem; letter-spacing: 0; text-transform: none; font-weight: 400; }
+.beyond__topnav a:hover, .beyond__footer a:hover, .beyond__topnav a:focus-visible, .beyond__footer a:focus-visible { color: #fff; }
+.beyond__header { display: block; margin-bottom: 58px; }
+.beyond__chapter { display: block; margin: 0 0 22px; padding: 0; color: #c3cebb; font-size: .75rem; font-weight: 400; letter-spacing: .02em; text-transform: none; }
+.beyond__header h2 { margin: 0; font: 400 clamp(3rem, 6.4vw, 6rem)/1.08 Georgia, serif; letter-spacing: -.065em; }
+.beyond__intro { margin: 22px 0 0; color: #d3dccd; font-size: .95rem; line-height: 1.7; }
+.beyond-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-areas: "project sport gaming"; gap: 36px; border: 0; }
+.beyond-card { overflow: visible; border: 0; border-top: 1px solid #d8e0d04d; border-radius: 0; background: none; box-shadow: none; backdrop-filter: none; transition: none; }
+.beyond-card:hover, .beyond-card:focus-within, .beyond-card.is-expanded { background: none; transform: none; border-color: #d8e0d099; }
+.beyond-card__trigger { display: grid; grid-template-columns: 1fr 28px; align-items: start; gap: 14px; min-height: 0; padding: 18px 0 26px; color: #f4f1e7; }
+.beyond-entry-number { grid-column: 1; grid-row: 1; color: #c3cebb; font: .78rem/1.4 Georgia, serif; }
+.beyond-card__trigger > .beyond-card__visual { grid-column: 1 / -1; grid-row: 2; width: 100%; height: clamp(190px, 19vw, 240px); margin: 4px 0 12px; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.beyond-card__trigger > .beyond-card__visual::before { content: none; }
+.beyond-card__trigger > .beyond-entry-copy { grid-column: 1 / -1; grid-row: 3; }
+.beyond-entry-copy { display: grid; gap: 12px; }
+.beyond-entry-copy strong { font: 400 clamp(1.5rem, 2.3vw, 2.2rem)/1.15 Georgia, serif; letter-spacing: -.04em; }
+.beyond-entry-copy > span { color: #d3dccd; font-size: .86rem; line-height: 1.6; }
+.beyond-entry-open { grid-column: 2; grid-row: 1; justify-self: end; font-size: 1.4rem; font-weight: 300; transition: transform 200ms ease; }
+.beyond-card__trigger:hover .beyond-entry-open { transform: translate(3px, -3px); }
+.beyond-card__trigger:hover .beyond-entry-copy strong { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 7px; }
+.beyond-card__trigger:focus-visible, .beyond__topnav a:focus-visible, .beyond__footer a:focus-visible { outline: 2px solid #d3dfc6; outline-offset: 6px; }
+.beyond__footer { margin-top: 38px; }
+.beyond.is-reveal-ready .beyond__header, .beyond.is-reveal-ready .beyond-card, .beyond.is-reveal-ready .beyond__footer { opacity: 1; transform: none; transition: none; }
+.beyond .beyond-modal { color-scheme: light; width: min(94vw, 1040px); max-height: 90svh; border: 0; border-radius: 3px; color: #25372e; background: #f5f2eb; box-shadow: 0 24px 80px #0005; }
+.beyond .beyond-modal__surface { max-height: 90svh; background: #f5f2eb; scrollbar-color: #a7ad9e #f5f2eb; }
+.beyond .beyond-modal::backdrop { background: #15241ec4; backdrop-filter: blur(3px); }
+.beyond .beyond-modal__close { border-color: #bbc0b1; border-radius: 0; background: #f5f2eb; color: #25372e; }
+.beyond .beyond-modal__close:hover { background: #e6e7db; transform: none; }
+.beyond .beyond-modal__close:focus-visible { outline: 2px solid #526847; outline-offset: 3px; }
+.beyond .beyond-modal__header { max-width: none; padding: 54px 48px 36px; }
+.beyond .beyond-modal__header > span { color: #63705d; font-weight: 400; font-size: .7rem; letter-spacing: .02em; text-transform: none; }
+.beyond .beyond-modal__header h3 { max-width: 90%; color: #25372e; font-size: clamp(2.6rem, 5vw, 4.5rem); line-height: 1.05; }
+.beyond .beyond-modal__header p { color: #63705d; font-size: .94rem; }
+.beyond .beyond-modal--sports { --sport-cream: #25372e; --sport-muted: #5c6858; --sport-lime: #405b36; --sport-line: #cbd0c1; }
+.sport-journal { padding-top: 0; }
+.sport-court { border: 0; border-radius: 0; background: #e5e5d9; }
+.sport-court__scene { max-width: 760px; padding-bottom: 6px; }
+.sport-court__drawing { filter: none; }
+.sport-court__caption { color: #6c7464; }
+.sport-eyebrow { letter-spacing: .03em; font-weight: 400; text-transform: none; font-size: .74rem; }
+.sport-years strong { font-size: 3.5rem; }
+.sport-play { border-color: #929d86; border-radius: 2px; min-height: 42px; color: #30472b; }
+.sport-play:hover { background: #d9decd; }
+.sport-court__footer { border-top: 1px solid #ced1c1; }
+.sport-rally-status { display: block; margin-top: 5px; color: #64705d; font-size: .72rem; }
+.sport-strength { margin-top: 38px; }
+.sport-strength__heading h4 { font-size: 2rem; }
+.sport-profile strong { font-weight: 400; }
+.sport-performance { border: 0; border-top: 1px solid #a4af98; border-bottom: 1px solid #a4af98; border-radius: 0; }
+.sport-performance__selector { padding: 24px 24px 24px 0; }
+.sport-performance__selector button { border-radius: 0; }
+.sport-performance__selector button[aria-pressed="true"] { color: #25372e; background: #e5e8da; box-shadow: inset 2px 0 #536d42; }
+.sport-performance__selector button:hover { background: #e5e8da; }
+.sport-lift { justify-content: center; background: #e9ecdf; }
+.sport-lift__value strong { font-size: clamp(4.5rem, 8vw, 7rem); }
+.sport-lift__index { color: #65715e; }
+.sport-next { margin-top: 30px; padding-top: 0; border: 0; display: block; }
+.sport-next__symbol, .sport-next__tag { display: none; }
+.sport-next h4 { font-size: 1.6rem; }
+.sport-next p { max-width: 68ch; }
+@media (max-width: 760px) {
+  .beyond__inner { width: 88vw; padding-top: 28px; }
+  .beyond__topnav { margin-bottom: 50px; }
+  .beyond__header { margin-bottom: 38px; }
+  .beyond-grid { grid-template-columns: 1fr; grid-template-areas: "project" "sport" "gaming"; gap: 28px; }
+  .beyond-card__trigger { grid-template-columns: 1fr 28px; gap: 12px; padding: 18px 0; }
+  .beyond-card__trigger > .beyond-card__visual { width: min(100%, 440px); height: 220px; justify-self: center; }
+  .beyond-entry-copy > span { font-size: .79rem; }
+  .beyond-entry-open { font-size: 1.4rem; }
+  .beyond .beyond-modal__header { padding: 64px 22px 28px; }
+  .sport-journal { padding: 0 22px 28px; }
+  .sport-performance__selector { padding: 16px 0; }
+  .sport-lift { min-height: 235px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .beyond-entry-open { transition: none; }
+}

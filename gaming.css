@@ -1,0 +1,33 @@
+.gaming-gallery { display: grid; grid-template-columns: 1fr 1.05fr; gap: 40px; padding: 0 48px 42px; }
+.gaming-ranks { border-top: 1px solid #aab09f; }
+.gaming-ranks button { display: grid; grid-template-columns: 60px 1fr 20px; gap: 16px; align-items: center; width: 100%; min-height: 94px; padding: 14px 12px; border: 0; border-bottom: 1px solid #cbd0c1; border-radius: 0; background: transparent; color: #25372e; text-align: left; cursor: pointer; font: inherit; transition: background-color 180ms ease; }
+.gaming-ranks button:hover { background: #e9eade; }
+.gaming-ranks button[aria-pressed="true"] { background: #e5e8da; box-shadow: inset 2px 0 #526847; }
+.gaming-ranks img { display: block; width: 60px; height: 60px; object-fit: contain; }
+.gaming-ranks button > span:nth-child(2) { display: grid; gap: 6px; }
+.gaming-ranks strong { font-weight: 500; font-size: .94rem; }
+.gaming-ranks small { font-size: .78rem; color: #5c6858; }
+.gaming-ranks button > span:last-child { font-size: 1.1rem; opacity: .45; }
+.gaming-ranks button[aria-pressed="true"] > span:last-child { opacity: 1; }
+.gaming-insignia { --rank-accent: #903c5c; display: flex; flex-direction: column; min-width: 0; margin: 0; padding: 22px 24px 0; border-top: 2px solid var(--rank-accent); background: #eeece5; }
+.gaming-insignia__image { display: grid; place-items: center; min-height: 280px; flex: 1; }
+.gaming-insignia__image img { display: block; width: 100%; max-width: 330px; height: 280px; object-fit: contain; }
+.gaming-insignia figcaption { display: grid; gap: 8px; padding: 24px 0; }
+.gaming-insignia figcaption > span { color: #5c6858; font-size: .77rem; }
+.gaming-insignia figcaption > strong { color: #25372e; font: 400 clamp(1.9rem, 3vw, 2.8rem)/1.1 Georgia, serif; letter-spacing: -.035em; }
+.gaming-insignia__navigation { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 14px 0; border-top: 1px solid #c4c9ba; }
+.gaming-insignia__navigation > span { color: #63705d; font-size: .72rem; font-variant-numeric: tabular-nums; }
+.gaming-insignia__navigation > div { display: flex; gap: 8px; }
+.gaming-insignia__navigation button { width: 42px; height: 42px; border: 1px solid #aab49d; background: transparent; color: #25372e; font: inherit; font-size: 1.2rem; cursor: pointer; }
+.gaming-insignia__navigation button:hover { background: #dfe4d4; }
+.gaming-gallery button:focus-visible { outline: 2px solid #526847; outline-offset: 3px; }
+@media (max-width: 760px) {
+  .gaming-gallery { grid-template-columns: 1fr; gap: 28px; padding: 0 22px 28px; }
+  .gaming-ranks button { min-height: 78px; padding: 10px 12px; grid-template-columns: 48px 1fr 20px; }
+  .gaming-ranks img { width: 48px; height: 48px; }
+  .gaming-insignia__image { min-height: 210px; }
+  .gaming-insignia__image img { height: 210px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gaming-ranks button { transition: none; }
+}

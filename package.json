@@ -1,0 +1,11 @@
+{
+  "name": "antoine-cv",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": "24.x" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "audit:site": "node scripts/audit.mjs"
+  }
+}

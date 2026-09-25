@@ -1,0 +1,1727 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Prototype d'un CV professionnel interactif, présenté dans un environnement immersif."
+    />
+    <meta name="theme-color" content="#14241f" />
+    <title>CV interactif — Prototype</title>
+    <link rel="stylesheet" href="styles.css?v=20260824-10" />
+    <link rel="stylesheet" href="sports.css?v=20260924-2" />
+    <script src="script.js?v=20260924-1" defer></script>
+    <link rel="stylesheet" href="beyond.css?v=20260924-3" />
+    <script src="sports.js?v=20260924-2" defer></script>
+    <link rel="stylesheet" href="gaming.css?v=20260924-1" />
+    <script src="gaming.js?v=20260924-2" defer></script>
+    <link rel="stylesheet" href="projects.css?v=20260925-1" />
+    <script src="projects.js?v=20260925-1" defer></script>
+  </head>
+  <body>
+    <div class="scene-background" aria-hidden="true">
+      <picture class="scene__media">
+        <img
+          src="background.jpg"
+          srcset="
+            background2.jpg 1920w,
+            background.jpg  2400w,
+            background3.jpg 5611w
+          "
+          sizes="110vw"
+          alt=""
+          draggable="false"
+          fetchpriority="high"
+        />
+      </picture>
+
+      <div class="scene__veil"></div>
+      <div class="scene__light"></div>
+      <div class="detail-backdrop"></div>
+    </div>
+
+    <div class="scene" id="scene">
+      <main class="hero">
+        <section class="introduction" aria-labelledby="page-title">
+          <p class="eyebrow">CV INTERACTIF</p>
+          <h1 id="page-title">
+            Une carrière
+            <span>en perspective.</span>
+          </h1>
+          <p class="introduction__copy">
+            Un CV vivant, conçu comme une interface à explorer plutôt qu’un
+            document figé.
+          </p>
+        </section>
+
+        <section class="cv-stage" id="cv" aria-label="CV interactif d’Antoine Goudedranche">
+          <button
+            class="focus-close"
+            id="focus-close"
+            type="button"
+            aria-label="Fermer l’aperçu agrandi du CV"
+            tabindex="-1"
+          >
+            <span>Fermer</span>
+            <span aria-hidden="true">×</span>
+          </button>
+
+          <div class="cv-float">
+            <div class="cv-shadow" aria-hidden="true"></div>
+
+            <article
+              class="cv-card"
+              id="cv-card"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+              aria-describedby="cv-click-message"
+              aria-label="Agrandir le CV interactif d’Antoine Goudedranche"
+            >
+              <div class="cv-card__grain" aria-hidden="true"></div>
+
+              <div class="cv-document">
+                <header class="cv-real-header">
+                  <h2>Antoine Goudedranche</h2>
+                  <p class="cv-real-contact">
+                    <button
+                      class="cv-interactive-trigger cv-email-trigger"
+                      id="cv-email-trigger"
+                      type="button"
+                      data-email="antoine31.goudedranche@gmail.com"
+                      aria-label="Copier l’adresse e-mail antoine31.goudedranche@gmail.com"
+                    >
+                      antoine31.goudedranche@gmail.com
+                    </button>
+                    <i aria-hidden="true">|</i>
+                    <button
+                      class="cv-interactive-trigger cv-phone-trigger"
+                      id="cv-phone-trigger"
+                      type="button"
+                      aria-expanded="false"
+                      aria-controls="contact-panel"
+                      aria-label="Afficher mes coordonnées de contact direct"
+                    >
+                      <span>06 95 92 71 05</span>
+                      <span class="cv-interactive-trigger__signal" aria-hidden="true"></span>
+                    </button>
+                    <i aria-hidden="true">|</i>
+                    <a
+                      class="cv-linkedin-link"
+                      id="cv-linkedin-link"
+                      href="https://www.linkedin.com/in/antoine-goudedranche-43596a268/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Ouvrir le profil LinkedIn d’Antoine Goudedranche dans un nouvel onglet"
+                      >linkedin.com/in/antoine-goudedranche-43596a268</a
+                    >
+                  </p>
+                  <p class="cv-real-tagline">
+                    <button
+                      class="cv-interactive-trigger cv-polytechnique-trigger"
+                      id="cv-polytechnique-trigger"
+                      type="button"
+                      aria-expanded="false"
+                      aria-controls="polytechnique-panel"
+                      aria-label="Découvrir mon double diplôme en Data Science à l’École Polytechnique"
+                    >
+                      <span
+                        >Étudiant ingénieur M2 Data Science à l’École
+                        Polytechnique</span
+                      >
+                      <span
+                        class="cv-interactive-trigger__signal"
+                        aria-hidden="true"
+                      ></span>
+                    </button>
+                    <i aria-hidden="true">|</i>
+                    <button
+                      class="cv-interactive-trigger cv-ece-trigger"
+                      id="cv-ece-trigger"
+                      type="button"
+                      aria-expanded="false"
+                      aria-controls="ece-panel"
+                      aria-label="Découvrir mon cursus d’ingénieur et ma majeure Data et Intelligence Artificielle à l’ECE"
+                    >
+                      <span>M2 Data &amp; IA à l’ECE</span>
+                      <span
+                        class="cv-interactive-trigger__signal"
+                        aria-hidden="true"
+                      ></span>
+                    </button>
+                  </p>
+                </header>
+
+                <section class="cv-real-section cv-real-summary">
+                  <h3>Résumé</h3>
+                  <p>
+                    Étudiant en
+                    <strong>M2 Data Science à l’École Polytechnique</strong> en
+                    double diplôme avec l’ECE en majeure Data &amp; IA. Je suis à
+                    la recherche d’un
+                    <strong
+                      >Stage de fin d’études de 6 mois à partir d’avril
+                      2027</strong
+                    >
+                    dans le domaine de la data science (machine learning, IA,
+                    deep learning, analyse prédictive). Particulièrement
+                    intéressé par les secteurs de la <strong>Finance</strong> et
+                    des <strong>Nouvelles Technologies</strong>, je souhaite
+                    mettre mes compétences en Data Science, Machine Learning
+                    et Intelligence Artificielle au service de problématiques
+                    à fort impact.
+                    <br />Mobilité :
+                    <button
+                      class="cv-interactive-trigger cv-location-trigger"
+                      id="cv-location-trigger"
+                      type="button"
+                      aria-expanded="false"
+                      aria-controls="location-panel"
+                      aria-label="Découvrir mes ancrages en France : Paris et Toulouse"
+                    ><span>France</span><span class="cv-interactive-trigger__signal" aria-hidden="true"></span></button>,
+                    Suisse, Luxembourg, États-Unis, Royaume-Uni, Pays-Bas
+                  </p>
+                </section>
+
+                <section class="cv-real-section cv-real-skills">
+                  <h3>Compétences</h3>
+                  <ul>
+                    <li>
+                      <strong>Langages de programmation :</strong> Python, SQL,
+                      C, VBA, JavaScript, PHP, HTML
+                    </li>
+                    <li class="cv-real-skills__tools">
+                      <strong>Outils et environnements :</strong> MySQL, Power
+                      BI, VSCode, phpMyAdmin, Excel, Codex, Antigravity,
+                      Bloomberg
+                    </li>
+                    <li>
+                      <strong>Compétences transversales :</strong> Gestion de
+                      projet, Travail collaboratif, Autonomie
+                    </li>
+                    <li>
+                      <strong>Data Science &amp; Machine Learning :</strong>
+                      PyTorch, scikit-learn, pandas, NumPy, Matplotlib
+                    </li>
+                    <li>
+                      <strong>Langues :</strong> Français (natif), Anglais B2 —
+                      TOEIC 935/990
+                    </li>
+                  </ul>
+                </section>
+
+                <section class="cv-real-section cv-real-training">
+                  <h3>Formation</h3>
+
+                  <article class="cv-real-entry">
+                    <div class="cv-real-entry__head">
+                      <div>
+                        <h4>École Polytechnique</h4>
+                        <p class="cv-real-subtitle">Master 2 Data Science</p>
+                      </div>
+                      <time>2026 – 2027</time>
+                    </div>
+                    <div class="cv-real-entry__details">
+                      <p>
+                        <strong>Cours suivis :</strong> Deep Learning, Computer
+                        Vision &amp; NLP, Reinforcement Learning, Optimal
+                        Transport, Optimization for Data Science, Machine
+                        Learning, NLP and LLM, Generative models for visual
+                        content, Deep Learning for Computer Vision
+                      </p>
+                      <p>
+                        <strong>Projet annuel :</strong> Participation au Data Camp &amp;
+                        Hackathons IA (Hi! PARIS)
+                      </p>
+                      <p>
+                        <strong>Capstone Project :</strong> Résolution d’un
+                        problème technique réel de data science soumis par une
+                        entreprise
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="cv-real-entry">
+                    <div class="cv-real-entry__head">
+                      <div>
+                        <h4>ECE Paris – Lyon</h4>
+                        <p class="cv-real-subtitle">
+                          Majeure Data &amp; Intelligence Artificielle (Parcours
+                          International)
+                        </p>
+                      </div>
+                      <time>2022 – 2027</time>
+                    </div>
+                    <div class="cv-real-entry__details">
+                      <p>
+                        Cursus de 5 ans dont 2 ans de classe préparatoire
+                        intégrée.
+                      </p>
+                      <p>
+                        Cours suivis : Advanced Databases, Python, Machine
+                        Learning, Business Intelligence, Big Data.
+                      </p>
+                      <p>
+                        Projet annuel : Détection d’anomalies dans des smart
+                        contracts DeFi via IA (blockchain Ethereum).
+                      </p>
+                      <p>
+                        Projet : Analyse et visualisation de datasets fonciers
+                        avec Python pour optimiser l’investissement locatif.
+                      </p>
+                      <p>
+                        Projet : Développement d’une reconnaissance vocale de 2
+                        mots basée sur des modèles de Machine Learning.
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="cv-real-entry">
+                    <div class="cv-real-entry__head">
+                      <div>
+                        <h4>
+                          Nelson Mandela University (Afrique du Sud)
+                        </h4>
+                        <p class="cv-real-subtitle">
+                          Semestre à l’étranger - L3
+                        </p>
+                      </div>
+                      <time>Juil 2024 – Déc 2024</time>
+                    </div>
+                    <div class="cv-real-entry__details">
+                      <p>
+                        Approfondissement technique et ouverture culturelle.
+                      </p>
+                      <p>
+                        Cours suivis : Intelligence Artificielle, Business
+                        Intelligence, Mathématiques, UI Design, E-commerce.
+                      </p>
+                    </div>
+                  </article>
+
+                </section>
+
+                <section class="cv-real-section cv-real-experience">
+                  <h3>Expérience</h3>
+
+                  <article class="cv-real-entry">
+                    <div class="cv-real-entry__head">
+                      <h4>
+                        <button
+                          class="cv-interactive-trigger cv-dnca-trigger"
+                          id="cv-dnca-trigger"
+                          type="button"
+                          aria-expanded="false"
+                          aria-controls="dnca-panel"
+                          aria-label="Découvrir mon stage en automatisation, intelligence artificielle et multigestion chez DNCA Finance"
+                        >
+                          <span
+                            >Stagiaire Assistant de Gestion – DNCA Finance,
+                            Paris Place Vendôme</span
+                          >
+                          <span
+                            class="cv-interactive-trigger__signal"
+                            aria-hidden="true"
+                          ></span>
+                        </button>
+                      </h4>
+                      <time>Avril 2026 – Août 2026</time>
+                    </div>
+                    <p class="cv-real-subtitle">Automatisation IA &amp; Machine Learning</p>
+                    <div class="cv-real-entry__details">
+                      <p>
+                        Développement d’outils d’automatisation intégrant l’IA
+                        pour l’équipe Multigestion
+                      </p>
+                      <p>
+                        Accompagnement de l’équipe dans l’adoption et
+                        l’intégration progressive des LLM dans les processus
+                        métiers
+                      </p>
+                      <p>
+                        Développement d’outils d’aide à la décision fondés sur
+                        des modèles de Machine Learning.
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="cv-real-entry">
+                    <div class="cv-real-entry__head">
+                      <h4>
+                        <button
+                          class="cv-interactive-trigger cv-ikea-trigger"
+                          id="cv-ikea-trigger"
+                          type="button"
+                          aria-expanded="false"
+                          aria-controls="ikea-panel"
+                          aria-label="Découvrir mon stage ouvrier de vendeur chez IKEA Roques"
+                        >
+                          <span>Vendeur – IKEA Roques</span>
+                          <span
+                            class="cv-interactive-trigger__signal"
+                            aria-hidden="true"
+                          ></span>
+                        </button>
+                      </h4>
+                      <time>Janv 2025 – Fév 2025</time>
+                    </div>
+                    <div class="cv-real-entry__details">
+                      <p>
+                        Immersion dans le monde de l’entreprise dans un secteur
+                        externe à mon cursus scolaire.
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="cv-real-entry">
+                    <div class="cv-real-entry__head">
+                      <h4>
+                        <button
+                          class="cv-interactive-trigger cv-continental-trigger"
+                          id="cv-continental-trigger"
+                          type="button"
+                          aria-expanded="false"
+                          aria-controls="continental-panel"
+                          aria-label="Découvrir mon projet d’éco-conception numérique chez Continental Automotive Toulouse"
+                        >
+                          <span
+                            >Stagiaire Projet – Continental Automotive,
+                            Toulouse</span
+                          >
+                          <span
+                            class="cv-interactive-trigger__signal"
+                            aria-hidden="true"
+                          ></span>
+                        </button>
+                      </h4>
+                      <time>Janv 2024 – Fév 2024</time>
+                    </div>
+                    <div class="cv-real-entry__details">
+                      <p>
+                        Travail de recherche et d’analyse sur l’éco-conception
+                        numérique pour le service IT.
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="cv-real-entry cv-real-volunteering">
+                    <div class="cv-real-entry__head">
+                      <h4>Bénévolat</h4>
+                    </div>
+                    <div class="cv-real-entry__details">
+                      <div class="cv-real-volunteer-line">
+                        <button
+                          class="cv-interactive-trigger cv-afev-trigger"
+                          id="cv-afev-trigger"
+                          type="button"
+                          aria-expanded="false"
+                          aria-controls="afev-panel"
+                          aria-label="Découvrir mon expérience de mentorat avec l’Afev"
+                        >
+                          <span
+                            >Accompagnement de jeunes élèves en difficulté
+                            scolaire – Association AFEV Lyon.</span
+                          >
+                          <span
+                            class="cv-interactive-trigger__signal"
+                            aria-hidden="true"
+                          ></span>
+                        </button>
+                        <time>2022 – 2023</time>
+                      </div>
+                      <div
+                        class="cv-real-volunteer-line cv-real-volunteer-line--interactive"
+                        id="cv-gqeberha-hit-area"
+                      >
+                        <button
+                          class="cv-interactive-trigger cv-gqeberha-trigger"
+                          id="cv-gqeberha-trigger"
+                          type="button"
+                          aria-expanded="false"
+                          aria-controls="gqeberha-panel"
+                          aria-label="Découvrir mon projet bénévole de réhabilitation à Gqeberha en Afrique du Sud"
+                        >
+                          <span>Projet de réhabilitation de logements dans des quartiers défavorisés (Afrique du Sud - Gqeberha)</span>
+                          <span
+                            class="cv-interactive-trigger__signal"
+                            aria-hidden="true"
+                          ></span>
+                        </button>
+                        <time>2024</time>
+                      </div>
+                    </div>
+                  </article>
+                </section>
+              </div>
+            </article>
+
+            <div class="click-cue" id="cv-click-message">
+              <span class="click-cue__icon" aria-hidden="true"></span>
+              <span>Cliquer pour plus de détails</span>
+            </div>
+          </div>
+
+        </section>
+
+        <span class="travel-plane" id="travel-plane" aria-hidden="true">✈</span>
+
+        <span class="contact-signal" id="contact-signal" aria-hidden="true">
+          <span class="contact-signal__ring"></span>
+          <span class="contact-signal__ring"></span>
+          <span class="contact-signal__core">☎</span>
+        </span>
+
+        <span class="academic-signal" id="academic-signal" aria-hidden="true">
+          <span class="academic-signal__mark">X</span>
+          <span class="academic-signal__orbit"></span>
+          <span class="academic-signal__dot academic-signal__dot--one"></span>
+          <span class="academic-signal__dot academic-signal__dot--two"></span>
+        </span>
+
+        <span class="ece-signal" id="ece-signal" aria-hidden="true">
+          <span class="ece-signal__trail ece-signal__trail--one"></span>
+          <span class="ece-signal__trail ece-signal__trail--two"></span>
+          <span class="ece-signal__core">01</span>
+        </span>
+
+        <span class="lycee-signal" id="lycee-signal" aria-hidden="true">
+          <span class="lycee-signal__ring"></span>
+          <span class="lycee-signal__route"></span>
+          <span class="lycee-signal__aircraft">✈</span>
+        </span>
+
+        <span
+          class="mentorship-signal"
+          id="mentorship-signal"
+          aria-hidden="true"
+        >
+          <span class="mentorship-signal__person">A</span>
+          <span class="mentorship-signal__link"></span>
+          <span class="mentorship-signal__person">N</span>
+        </span>
+
+        <span class="gqeberha-signal" id="gqeberha-signal" aria-hidden="true">
+          <span class="gqeberha-signal__roof"></span>
+          <span class="gqeberha-signal__house">
+            <span class="gqeberha-signal__door"></span>
+          </span>
+          <span class="gqeberha-signal__spark"></span>
+        </span>
+
+        <span class="ikea-signal" id="ikea-signal" aria-hidden="true">
+          <span class="ikea-signal__board ikea-signal__board--one"></span>
+          <span class="ikea-signal__board ikea-signal__board--two"></span>
+          <span class="ikea-signal__board ikea-signal__board--three"></span>
+          <span class="ikea-signal__strap"></span>
+        </span>
+
+        <span
+          class="continental-signal"
+          id="continental-signal"
+          aria-hidden="true"
+        >
+          <span class="continental-signal__orbit"></span>
+          <span class="continental-signal__core">&lt;/&gt;</span>
+          <span class="continental-signal__eco"></span>
+        </span>
+
+        <span class="dnca-signal" id="dnca-signal" aria-hidden="true">
+          <span class="dnca-signal__axis"></span>
+          <span class="dnca-signal__candle dnca-signal__candle--one"></span>
+          <span class="dnca-signal__candle dnca-signal__candle--two"></span>
+          <span class="dnca-signal__candle dnca-signal__candle--three"></span>
+          <span class="dnca-signal__candle dnca-signal__candle--four"></span>
+          <span class="dnca-signal__pulse"></span>
+        </span>
+
+        <div
+          class="copy-toast"
+          id="copy-toast"
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+          aria-hidden="true"
+        >
+          <span class="copy-toast__icon" aria-hidden="true"></span>
+          <span id="copy-toast-message">Adresse e-mail copiée</span>
+        </div>
+
+        <aside
+          class="location-panel"
+          id="location-panel"
+          aria-hidden="true"
+          aria-labelledby="location-panel-title"
+        >
+          <button
+            class="panel-close location-panel__close"
+            id="location-panel-close"
+            type="button"
+            aria-label="Fermer le panneau de mobilité"
+          >
+            <span class="panel-close__icon" aria-hidden="true"></span>
+          </button>
+
+          <header class="location-panel__header">
+            <p class="location-panel__eyebrow">Mobilité professionnelle</p>
+            <h2 id="location-panel-title">Deux ancrages,<br />une même mobilité.</h2>
+          </header>
+
+          <div
+            class="mobility-map"
+            role="img"
+            aria-label="Carte stylisée de la France reliant Muret, près de Toulouse, à Paris"
+          >
+            <div class="mobility-map__canvas">
+              <img
+                class="mobility-map__land"
+                src="france-map.svg"
+                alt=""
+                aria-hidden="true"
+                draggable="false"
+              />
+              <div
+                class="mobility-map__zone mobility-map__zone--paris"
+                aria-hidden="true"
+              ></div>
+              <div
+                class="mobility-map__zone mobility-map__zone--muret"
+                aria-hidden="true"
+              ></div>
+              <div class="mobility-map__route" aria-hidden="true">
+                <span>✈</span>
+              </div>
+              <div class="mobility-map__point mobility-map__point--paris">
+                <span aria-hidden="true"></span>
+                <strong>Paris</strong>
+                <small>Île-de-France</small>
+              </div>
+              <div class="mobility-map__point mobility-map__point--muret">
+                <span aria-hidden="true"></span>
+                <strong>Muret</strong>
+                <small>Haute-Garonne</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="location-panel__copy">
+            <p>
+              Originaire de <strong>Muret, près de Toulouse</strong>, je suis
+              mobile dans toute la Haute-Garonne. Titulaire du permis B et
+              disposant d’un véhicule, je peux me déplacer facilement dans la
+              région.
+            </p>
+            <p>
+              Mes études et mes expériences professionnelles à
+              <strong>Paris</strong> me permettent également d’être disponible
+              en Île-de-France.
+            </p>
+            <p>
+              Ma recherche de stage s’étend à la <strong>France</strong>, à la
+              Suisse, au Luxembourg, aux États-Unis, au Royaume-Uni et aux
+              Pays-Bas.
+            </p>
+          </div>
+
+        </aside>
+
+        <aside
+          class="contact-panel"
+          id="contact-panel"
+          aria-hidden="true"
+          aria-labelledby="contact-panel-title"
+        >
+          <button
+            class="panel-close contact-panel__close"
+            id="contact-panel-close"
+            type="button"
+            aria-label="Fermer le panneau de contact"
+          >
+            <span class="panel-close__icon" aria-hidden="true"></span>
+          </button>
+
+          <header class="contact-panel__header">
+            <p class="contact-panel__eyebrow">Contact direct</p>
+            <h2 id="contact-panel-title">Échangeons<br />simplement.</h2>
+            <p class="contact-panel__availability">
+              <span aria-hidden="true"></span>
+              Réponse rapide
+            </p>
+          </header>
+
+          <p class="contact-panel__intro">
+            Pour une prise de contact directe, vous pouvez me joindre par
+            téléphone ou utiliser mon adresse personnelle.
+          </p>
+
+          <div class="contact-panel__links">
+            <a
+              class="contact-panel__link"
+              href="tel:+33695927105"
+              aria-label="Appeler le 06 95 92 71 05"
+            >
+              <span class="contact-panel__link-label">Téléphone</span>
+              <strong>06 95 92 71 05</strong>
+              <span class="contact-panel__link-action" aria-hidden="true"
+                >Appeler ↗</span
+              >
+            </a>
+
+            <a
+              class="contact-panel__link"
+              href="mailto:antoine31.goudedranche@gmail.com"
+              aria-label="Écrire à antoine31.goudedranche@gmail.com"
+            >
+              <span class="contact-panel__link-label">E-mail personnel</span>
+              <strong>antoine31.goudedranche@gmail.com</strong>
+              <span class="contact-panel__link-action" aria-hidden="true"
+                >Écrire ↗</span
+              >
+            </a>
+          </div>
+
+          <p class="contact-panel__note">
+            Je consulte régulièrement mes messages et réponds rapidement, par
+            téléphone comme par e-mail.
+          </p>
+        </aside>
+
+        <aside
+          class="polytechnique-panel"
+          id="polytechnique-panel"
+          aria-hidden="true"
+          aria-labelledby="polytechnique-panel-title"
+        >
+          <button
+            class="panel-close polytechnique-panel__close"
+            id="polytechnique-panel-close"
+            type="button"
+            aria-label="Fermer la présentation du double diplôme"
+          >
+            <span class="panel-close__icon" aria-hidden="true"></span>
+          </button>
+
+          <header class="polytechnique-panel__header">
+            <div class="polytechnique-panel__logo">
+              <img
+                src="logopolytechnique.jpg"
+                alt="École Polytechnique et Institut Polytechnique de Paris"
+                draggable="false"
+              />
+            </div>
+            <div>
+              <p class="polytechnique-panel__eyebrow">
+                Double diplôme · 2026–2027
+              </p>
+              <h2 id="polytechnique-panel-title">M2 Data Science</h2>
+              <p class="polytechnique-panel__school">École Polytechnique</p>
+            </div>
+          </header>
+
+          <figure class="polytechnique-panel__campus">
+            <img
+              src="photoecole.jpg"
+              alt="Bâtiment de l’École Polytechnique sur le campus de Palaiseau"
+              draggable="false"
+            />
+            <figcaption>
+              <span>Campus de Palaiseau</span>
+              <span>Septembre 2026</span>
+            </figcaption>
+          </figure>
+
+          <div class="polytechnique-panel__copy">
+            <p>
+              Je suis en M2 Data Science à l’École Polytechnique dans le cadre
+              de mon double diplôme avec l’ECE pour l’année
+              universitaire 2026–2027.
+            </p>
+            <p>
+              Cette année prolonge mon cursus d’ingénieur par un
+              approfondissement exigeant du <strong>machine learning</strong>,
+              de l’<strong>intelligence artificielle</strong> et du
+              <strong>deep learning</strong>, appuyé sur les mathématiques et
+              les statistiques nécessaires à la conception et à l’évaluation
+              de modèles robustes.
+            </p>
+          </div>
+
+          <div class="polytechnique-panel__curriculum" aria-label="Informations clés du master">
+            <span><strong>12 mois</strong> à temps plein</span>
+            <span><strong>60 ECTS</strong></span>
+            <span><strong>En anglais</strong></span>
+          </div>
+
+          <a
+            class="polytechnique-panel__link"
+            href="https://www.ip-paris.fr/education/masters/mention-mathematiques-appliquees-statistique/master-year-2-data-science"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>
+              <small>Institut Polytechnique de Paris</small>
+              Découvrir le programme officiel
+            </span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </aside>
+
+        <aside
+          class="ece-panel"
+          id="ece-panel"
+          aria-hidden="true"
+          aria-labelledby="ece-panel-title"
+        >
+          <button
+            class="panel-close ece-panel__close"
+            id="ece-panel-close"
+            type="button"
+            aria-label="Fermer la présentation du cursus à l’ECE"
+          >
+            <span class="panel-close__icon" aria-hidden="true"></span>
+          </button>
+
+          <header class="polytechnique-panel__header ece-panel__header">
+            <div class="polytechnique-panel__logo ece-panel__logo">
+              <img
+                src="logoece.png"
+                alt="ECE École d’Ingénieurs"
+                draggable="false"
+              />
+            </div>
+            <div>
+              <p class="polytechnique-panel__eyebrow ece-panel__eyebrow">
+                Diplôme d’ingénieur · 2022–2027
+              </p>
+              <h2 id="ece-panel-title">Majeure Data &amp; IA</h2>
+              <p class="polytechnique-panel__school">ECE Paris</p>
+            </div>
+          </header>
+
+          <figure class="polytechnique-panel__campus ece-panel__campus">
+            <img
+              src="photoece.jpg"
+              alt="Campus parisien de l’ECE avec la tour Eiffel en arrière-plan"
+              draggable="false"
+            />
+            <figcaption>
+              <span>Campus de Paris</span>
+              <span>Cycle ingénieur</span>
+            </figcaption>
+          </figure>
+
+          <div class="polytechnique-panel__copy ece-panel__copy">
+            <p>
+              Élève ingénieur à l’ECE depuis 2022, je prépare en cinq ans un
+              <strong>diplôme d’ingénieur de niveau Bac+5</strong>, que
+              j’obtiendrai en 2027.
+            </p>
+            <p>
+              Après trois premières années généralistes en mathématiques,
+              physique, électronique et informatique, j’ai choisi la
+              <strong>majeure Data &amp; Intelligence Artificielle</strong> pour
+              transformer ce socle scientifique en expertise appliquée aux
+              données.
+            </p>
+          </div>
+
+          <div class="ece-panel__timeline" aria-label="Progression du cursus d’ingénieur">
+            <article>
+              <span>2022–2025</span>
+              <strong>Socle généraliste</strong>
+              <small>Sciences fondamentales et ingénierie</small>
+            </article>
+            <article>
+              <span>2025–2027</span>
+              <strong>Spécialisation Data &amp; IA</strong>
+              <small>De la donnée aux modèles intelligents</small>
+            </article>
+          </div>
+
+          <div
+            class="polytechnique-panel__curriculum ece-panel__curriculum"
+            aria-label="Informations clés de la majeure"
+          >
+            <span><strong>2 ans</strong> de majeure</span>
+            <span><strong>120 ECTS</strong></span>
+            <span><strong>Paris</strong></span>
+          </div>
+
+          <a
+            class="polytechnique-panel__link ece-panel__link"
+            href="https://www.ece.fr/program/majeure-data-ia/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>
+              <small>ECE École d’Ingénieurs</small>
+              Découvrir la majeure Data &amp; IA
+            </span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </aside>
+
+        <aside
+          class="lycee-panel"
+          id="lycee-panel"
+          aria-hidden="true"
+          aria-labelledby="lycee-panel-title"
+        >
+          <button
+            class="panel-close lycee-panel__close"
+            id="lycee-panel-close"
+            type="button"
+            aria-label="Fermer la présentation du parcours au lycée"
+          >
+            <span class="panel-close__icon" aria-hidden="true"></span>
+          </button>
+
+          <header class="lycee-panel__header">
+            <p class="lycee-panel__eyebrow">Formation initiale · 2019–2022</p>
+            <h2 id="lycee-panel-title">Du socle scientifique<br />à l’aéronautique.</h2>
+            <p class="lycee-panel__school">Lycée Pierre d’Aragon · Muret</p>
+          </header>
+
+          <figure class="lycee-panel__campus">
+            <img
+              src="photolycee.jpg"
+              alt="Lycée Pierre d’Aragon à Muret, en Haute-Garonne"
+              draggable="false"
+            />
+            <figcaption>
+              <span>Muret · Haute-Garonne</span>
+              <span>Lycée public polyvalent</span>
+            </figcaption>
+          </figure>
+
+          <div class="lycee-panel__copy">
+            <p>
+              J’ai effectué mes trois années de lycée au
+              <strong>lycée public Pierre d’Aragon de Muret</strong>. Cet
+              établissement polyvalent réunit des parcours généraux,
+              technologiques, notamment STMG, et professionnels, dont des
+              formations en CAP.
+            </p>
+            <p>
+              J’y ai obtenu un <strong>baccalauréat général mention Bien</strong>,
+              au terme d’un parcours résolument scientifique.
+            </p>
+          </div>
+
+          <div class="lycee-panel__path" aria-label="Choix de spécialités au lycée">
+            <article>
+              <span>Première</span>
+              <strong>Mathématiques · Physique-Chimie · NSI</strong>
+              <small>NSI suivie jusqu’à la fin de la première</small>
+            </article>
+            <span class="lycee-panel__path-line" aria-hidden="true"></span>
+            <article>
+              <span>Terminale</span>
+              <strong>Mathématiques · Physique-Chimie</strong>
+              <small>Option Mathématiques expertes</small>
+            </article>
+          </div>
+
+          <section class="lycee-panel__bia" aria-labelledby="lycee-bia-title">
+            <div class="lycee-panel__instrument" aria-hidden="true">
+              <span class="lycee-panel__instrument-ring"></span>
+              <span class="lycee-panel__instrument-needle"></span>
+              <strong>BIA</strong>
+            </div>
+            <div class="lycee-panel__bia-copy">
+              <p class="lycee-panel__bia-label">Cours supplémentaire · 2022</p>
+              <h3 id="lycee-bia-title">Brevet d’initiation à l’aéronautique</h3>
+              <p>
+                Suivi en parallèle de la terminale et obtenu avec la
+                <strong>mention Bien</strong> : une première exploration de
+                l’aérodynamique, de la météorologie et de la culture aéronautique.
+              </p>
+            </div>
+          </section>
+
+        </aside>
+
+        <aside
+          class="dnca-panel"
+          id="dnca-panel"
+          aria-hidden="true"
+          aria-labelledby="dnca-panel-title"
+        >
+          <button
+            class="panel-close dnca-panel__close"
+            id="dnca-panel-close"
+            type="button"
+            aria-label="Fermer la présentation du stage chez DNCA Finance"
+          >
+            <span class="panel-close__icon" aria-hidden="true"></span>
+          </button>
+
+          <header class="dnca-panel__header">
+            <div class="dnca-panel__meta">
+              <p class="dnca-panel__eyebrow">Stage M1 · 4 mois · 2026</p>
+              <div class="dnca-panel__logo">
+                <img
+                  src="logodnca.png"
+                  alt="DNCA Investments"
+                  draggable="false"
+                />
+              </div>
+            </div>
+            <h2 id="dnca-panel-title">
+              L’IA au service<br />de la multigestion.
+            </h2>
+            <p class="dnca-panel__company">
+              DNCA Finance · Paris, Place Vendôme
+            </p>
+          </header>
+
+          <figure class="dnca-panel__vendome">
+            <img
+              src="photodnca.jpg"
+              alt="Place Vendôme à Paris, où se trouvent les bureaux de DNCA Finance"
+              draggable="false"
+            />
+            <figcaption>
+              <span>Place Vendôme · Paris 1er</span>
+              <span>Avril — août 2026</span>
+            </figcaption>
+          </figure>
+
+          <div class="dnca-panel__copy">
+            <p>
+              Durant ce stage de quatre mois, j’ai rejoint la
+              <strong>Multigestion de DNCA Finance</strong>, société de gestion
+              française reconnue. L’équipe construit et pilote des fonds de
+              fonds sur mesure pour des clients institutionnels et d’autres
+              partenaires professionnels.
+            </p>
+            <p>
+              Ma mission consistait à traduire les besoins des gérants en outils
+              fiables, en combinant <strong>automatisation, LLM, traitement de
+              données et machine learning</strong>, sans automatiser la décision
+              d’investissement elle-même.
+            </p>
+          </div>
+
+          <div class="dnca-panel__projects" aria-label="Principaux axes du stage">
+            <article>
+              <span>01</span>
+              <strong>Automatiser</strong>
+              <small>Reporting quotidien et extraction PDF vers Excel</small>
+            </article>
+            <article>
+              <span>02</span>
+              <strong>Fiabiliser</strong>
+              <small>Excel, VBA, Morningstar et contrôles de données</small>
+            </article>
+            <article>
+              <span>03</span>
+              <strong>Surveiller</strong>
+              <small>Veille Bloomberg et alertes de marché sur Teams</small>
+            </article>
+          </div>
+
+          <div class="dnca-panel__principle">
+            <span aria-hidden="true">↔</span>
+            <div class="dnca-panel__principle-copy">
+              <strong>Une transmission croisée</strong>
+              <p>
+                Débutant en finance, j’apprenais auprès des gérants les
+                mécanismes de la multigestion. En retour, je transformais leurs
+                besoins métiers en outils d’IA et d’automatisation conçus pour
+                rester utilisables après mon départ.
+              </p>
+            </div>
+          </div>
+
+          <blockquote class="dnca-panel__impact">
+            Une expérience décisive, qui a transformé ma curiosité initiale en
+            véritable intérêt pour les marchés financiers, particulièrement
+            l’equity et les produits dérivés, et pour les métiers à l’interface
+            entre finance, data et intelligence artificielle.
+          </blockquote>
+
+          <a
+            class="dnca-panel__report"
+            href="stagednca.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ouvrir le rapport de stage DNCA Finance au format PDF dans un nouvel onglet"
+          >
+            <span class="dnca-panel__report-mark" aria-hidden="true">PDF</span>
+            <span>
+              <small>Rapport complet · 33 pages</small>
+              Ouvrir le rapport de stage
+            </span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </aside>
+
+        <aside
+          class="continental-panel"
+          id="continental-panel"
+          aria-hidden="true"
+          aria-labelledby="continental-panel-title"
+        >
+          <button
+            class="panel-close continental-panel__close"
+            id="continental-panel-close"
+            type="button"
+            aria-label="Fermer la présentation du stage chez Continental"
+          >
+            <span class="panel-close__icon" aria-hidden="true"></span>
+          </button>
+
+          <header class="continental-panel__header">
+            <div class="continental-panel__brand">
+              <img
+                src="logocontinental.jpg"
+                alt="Continental"
+                draggable="false"
+              />
+            </div>
+            <div>
+              <p class="continental-panel__eyebrow">
+                Stage de découverte · L2 · 5 semaines
+              </p>
+              <h2 id="continental-panel-title">Éco-conception numérique</h2>
+              <p class="continental-panel__site">
+                Continental Automotive · Toulouse
+              </p>
+            </div>
+          </header>
+
+          <figure class="continental-panel__campus">
+            <img
+              src="photocontinental.jpg"
+              alt="Site de Continental Automotive France à Toulouse"
+              draggable="false"
+            />
+            <figcaption>
+              <span>Continental Automotive France · Toulouse</span>
+              <span>2 janv. — 2 fév. 2024</span>
+            </figcaption>
+          </figure>
+
+          <div class="continental-panel__copy">
+            <p>
+              Réalisé en deuxième année de mon cursus, ce stage de découverte
+              m’a intégré pendant <strong>cinq semaines au service IT du site
+              toulousain</strong>, au sein de l’équipe chargée des applications
+              web internes.
+            </p>
+            <p>
+              Ma mission consistait à définir une démarche d’<strong>éco-conception
+              numérique</strong> permettant de réduire l’impact environnemental
+              des applications dès leur conception et sur l’ensemble de leur
+              cycle de vie.
+            </p>
+          </div>
+
+          <div
+            class="continental-panel__research"
+            aria-label="Déroulement de la mission de recherche"
+          >
+            <article>
+              <span>Sem. 01–02</span>
+              <strong>Comprendre</strong>
+              <small>Frameworks, architecture et sources de consommation</small>
+            </article>
+            <article>
+              <span>Sem. 03–04</span>
+              <strong>Comparer</strong>
+              <small>Benchmark d’outils, bonnes pratiques et solutions open source</small>
+            </article>
+            <article>
+              <span>Sem. 05</span>
+              <strong>Transmettre</strong>
+              <small>Recommandations, restitution et documentation intranet</small>
+            </article>
+          </div>
+
+          <div class="continental-panel__outcome">
+            <span aria-hidden="true">→</span>
+            <p>
+              Une sélection de solutions compatibles avec les contraintes de
+              sécurité et la pile technique de l’équipe, documentée pour
+              faciliter leur future mise en œuvre.
+            </p>
+          </div>
+
+          <p class="continental-panel__lesson">
+            Cette première conduite de projet autonome m’a initié au benchmark
+            technique, à la synthèse et au travail d’une équipe de développement
+            organisée autour de rituels agiles.
+          </p>
+
+          <a
+            class="continental-panel__report"
+            href="stagecontinental.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ouvrir le rapport de stage Continental au format PDF dans un nouvel onglet"
+          >
+            <span class="continental-panel__report-mark" aria-hidden="true"
+              >PDF</span
+            >
+            <span>
+              <small>Rapport complet · 22 pages</small>
+              Ouvrir le rapport de stage
+            </span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </aside>
+
+        <aside
+          class="ikea-panel"
+          id="ikea-panel"
+          aria-hidden="true"
+          aria-labelledby="ikea-panel-title"
+        >
+          <button
+            class="panel-close ikea-panel__close"
+            id="ikea-panel-close"
+            type="button"
+            aria-label="Fermer la présentation du stage chez IKEA"
+          >
+            <span class="panel-close__icon" aria-hidden="true"></span>
+          </button>
+
+          <header class="ikea-panel__header">
+            <div class="ikea-panel__brand" aria-hidden="true">
+              <span>IKEA</span>
+            </div>
+            <div>
+              <p class="ikea-panel__eyebrow">Stage ouvrier · 5 semaines</p>
+              <h2 id="ikea-panel-title">Vendeur</h2>
+              <p class="ikea-panel__store">IKEA Roques · Toulouse</p>
+            </div>
+          </header>
+
+          <figure class="ikea-panel__storefront">
+            <img
+              src="ikeaphoto.png"
+              alt="Entrée du magasin IKEA de Roques, communément appelé IKEA Toulouse"
+              draggable="false"
+            />
+            <figcaption>
+              <span>IKEA Roques · Magasin Toulouse 242</span>
+              <span>6 janv. — 7 fév. 2025</span>
+            </figcaption>
+          </figure>
+
+          <div class="ikea-panel__copy">
+            <p>
+              Intégré à mon cursus d’ingénieur, ce <strong>stage ouvrier de cinq
+              semaines</strong> m’a volontairement placé dans un environnement
+              très éloigné de ma formation technique : le terrain, la vente et
+              le contact direct avec la clientèle.
+            </p>
+            <p>
+              Au sein d’IKEA Roques, communément appelé <strong>IKEA
+              Toulouse</strong>, j’ai rejoint les univers salon, rangement,
+              salle à manger et mobilier de bureau avec les mêmes exigences
+              opérationnelles que l’équipe de vente.
+            </p>
+          </div>
+
+          <div class="ikea-panel__missions" aria-label="Principales missions du stage">
+            <article>
+              <span>01</span>
+              <strong>Conseiller</strong>
+              <small>Relation client, conception, produits et services</small>
+            </article>
+            <article>
+              <span>02</span>
+              <strong>Aménager</strong>
+              <small>Montage et réimplantation du plateau canapé</small>
+            </article>
+            <article>
+              <span>03</span>
+              <strong>S’adapter</strong>
+              <small>SäljaPro, PTAG, stocks et livraisons</small>
+            </article>
+          </div>
+
+          <p class="ikea-panel__lesson">
+            Cette immersion a renforcé ma communication, ma réactivité et mon
+            sens du collectif, tout en m’apportant une lecture très concrète des
+            réalités opérationnelles d’une grande entreprise.
+          </p>
+
+          <a
+            class="ikea-panel__report"
+            href="stageikea.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ouvrir le rapport de stage IKEA au format PDF dans un nouvel onglet"
+          >
+            <span class="ikea-panel__report-mark" aria-hidden="true">PDF</span>
+            <span>
+              <small>Rapport complet · 23 pages</small>
+              Ouvrir le rapport de stage
+            </span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </aside>
+
+        <aside
+          class="afev-panel"
+          id="afev-panel"
+          aria-hidden="true"
+          aria-labelledby="afev-panel-title"
+        >
+          <button
+            class="panel-close afev-panel__close"
+            id="afev-panel-close"
+            type="button"
+            aria-label="Fermer la présentation du mentorat Afev"
+          >
+            <span class="panel-close__icon" aria-hidden="true"></span>
+          </button>
+
+          <header class="afev-panel__header">
+            <p class="afev-panel__eyebrow">
+              Engagement bénévole · 2022–2023
+            </p>
+            <h2 id="afev-panel-title">Une année<br />de mentorat.</h2>
+            <p class="afev-panel__introduction">
+              L’Afev mobilise des étudiants bénévoles pour accompagner
+              régulièrement des jeunes fragilisés dans leur parcours éducatif.
+              Cette relation individuelle vise à développer l’autonomie, la
+              confiance et l’envie d’apprendre.
+            </p>
+          </header>
+
+          <div class="afev-panel__bond" aria-label="Binôme de mentorat Antoine et Nasser">
+            <div>
+              <span aria-hidden="true">A</span>
+              <small>Mentor</small>
+              <strong>Antoine</strong>
+            </div>
+            <div class="afev-panel__bond-line" aria-hidden="true">
+              <span></span>
+              <small>Un lien régulier</small>
+            </div>
+            <div>
+              <span aria-hidden="true">N</span>
+              <small>Élève de 6e</small>
+              <strong>Nasser</strong>
+            </div>
+          </div>
+
+          <div class="afev-panel__story">
+            <p>
+              Pendant l’année scolaire 2022–2023, j’ai accompagné
+              <strong>Nasser, alors en classe de 6e</strong>. Nos rencontres
+              associaient soutien scolaire et moments partagés, avec un objectif
+              constant : l’aider à progresser et à prendre confiance en ses
+              capacités.
+            </p>
+          </div>
+
+          <div class="afev-panel__activities" aria-label="Dimensions de l’accompagnement">
+            <article>
+              <span>01</span>
+              <strong>Apprendre</strong>
+              <small>Devoirs et cours particuliers</small>
+            </article>
+            <article>
+              <span>02</span>
+              <strong>Bouger</strong>
+              <small>Activités sportives</small>
+            </article>
+            <article>
+              <span>03</span>
+              <strong>Prendre confiance</strong>
+              <small>Échanges, écoute et encouragements</small>
+            </article>
+          </div>
+
+          <blockquote class="afev-panel__conviction">
+            Les inégalités sociales, et plus particulièrement les inégalités
+            éducatives, me touchent profondément. Elles constituent un enjeu
+            collectif et un véritable sujet d’État. Même en France, des progrès
+            restent nécessaires pour renforcer l’inclusion et garantir une
+            égalité réelle des chances.
+          </blockquote>
+
+          <a
+            class="afev-panel__link"
+            href="https://afev.org/actions/mentorat"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>
+              <small>Association Afev</small>
+              Découvrir le mentorat étudiant
+            </span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </aside>
+
+        <aside
+          class="gqeberha-panel"
+          id="gqeberha-panel"
+          aria-hidden="true"
+          aria-labelledby="gqeberha-panel-title"
+        >
+          <button
+            class="panel-close gqeberha-panel__close"
+            id="gqeberha-panel-close"
+            type="button"
+            aria-label="Fermer la présentation du projet bénévole à Gqeberha"
+          >
+            <span class="panel-close__icon" aria-hidden="true"></span>
+          </button>
+
+          <header class="gqeberha-panel__header">
+            <p class="gqeberha-panel__eyebrow">Mission solidaire · Afrique du Sud · 2024</p>
+            <h2 id="gqeberha-panel-title">Réhabiliter un lieu.<br />Soutenir un quartier.</h2>
+            <p class="gqeberha-panel__context">
+              Nelson Mandela University · Gqeberha
+            </p>
+          </header>
+
+          <figure class="gqeberha-panel__neighbourhood">
+            <img
+              src="gqerberha.png"
+              alt="Quartier défavorisé de Gqeberha en Afrique du Sud"
+              draggable="false"
+            />
+            <figcaption>
+              <span>Gqeberha · Eastern Cape</span>
+              <span>Port Elizabeth</span>
+            </figcaption>
+          </figure>
+
+          <div class="gqeberha-panel__copy">
+            <p>
+              Pendant mon semestre à la <strong>Nelson Mandela University</strong>,
+              j’ai participé à une mission bénévole au sein d’un quartier
+              défavorisé de Gqeberha, en Afrique du Sud.
+            </p>
+            <p>
+              L’objectif était très concret : unir nos efforts pour
+              <strong>améliorer durablement le quotidien d’une famille</strong>
+              tout en apportant une aide immédiate aux habitants du quartier.
+            </p>
+          </div>
+
+          <div class="gqeberha-panel__missions" aria-label="Actions menées pendant la mission">
+            <article>
+              <span>01</span>
+              <strong>Rénover</strong>
+              <small>Remise en état et amélioration du logement</small>
+            </article>
+            <article>
+              <span>02</span>
+              <strong>Aménager</strong>
+              <small>Nettoyage et réhabilitation du jardin</small>
+            </article>
+            <article>
+              <span>03</span>
+              <strong>Distribuer</strong>
+              <small>Eau et nourriture aux habitants du quartier</small>
+            </article>
+          </div>
+
+          <div class="gqeberha-panel__impact">
+            <div class="gqeberha-panel__impact-mark" aria-hidden="true">
+              <span></span>
+              <span></span>
+            </div>
+            <div>
+              <strong>Du chantier à l’aide humanitaire</strong>
+              <p>
+                Une action collective mêlant travail manuel, adaptation et
+                solidarité directe, avec des résultats immédiatement visibles
+                pour les personnes rencontrées.
+              </p>
+            </div>
+          </div>
+
+          <blockquote class="gqeberha-panel__memory">
+            Une expérience humaine marquante : agir ensemble, découvrir une
+            autre réalité sociale et mesurer la valeur d’une aide simple,
+            concrète et utile.
+          </blockquote>
+        </aside>
+
+        <aside
+          class="interaction-hint"
+          id="interaction-hint"
+          aria-hidden="true"
+          aria-labelledby="interaction-hint-title"
+          aria-live="polite"
+        >
+          <button
+            class="interaction-hint__close"
+            id="interaction-hint-close"
+            type="button"
+            aria-label="Fermer le conseil d’interaction"
+          >
+            ×
+          </button>
+          <p class="interaction-hint__label">À explorer</p>
+          <p id="interaction-hint-title">
+            Tous les éléments du CV sont <strong>interactifs</strong>. Cliquez
+            dessus pour découvrir plus de détails. N’hésitez pas à
+            explorer&nbsp;! <span aria-hidden="true">😉</span>
+          </p>
+        </aside>
+      </main>
+
+      <footer class="scene-footer">
+        <p class="photo-credit" aria-label="Crédit photo : Afrique du Sud">
+          <span class="photo-credit__mark" aria-hidden="true">©</span>
+          <span>Photo · Afrique du Sud</span>
+        </p>
+
+        <a
+          class="beyond-cue"
+          href="#au-dela"
+          aria-label="Découvrir la section Au-delà du CV"
+        >
+          <span>Au-delà du CV</span>
+          <span aria-hidden="true">↓</span>
+        </a>
+
+        <a
+          class="pdf-link"
+          href="CV_Antoine_Goudedranche.pdf?v=20260924"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Ouvrir le CV PDF
+          <span aria-hidden="true">↗</span>
+        </a>
+      </footer>
+    </div>
+
+    <section class="beyond" id="au-dela" aria-labelledby="beyond-title">
+      <div class="beyond__inner">
+        <nav class="beyond__topnav" aria-label="Navigation de la section">
+          <a href="#scene">
+            <span aria-hidden="true">↑</span>
+            Revenir au CV
+          </a>
+        </nav>
+
+        <header class="beyond__header">
+          <p class="beyond__chapter">Quelques pages personnelles</p>
+          <h2 id="beyond-title">Au-delà du CV.</h2>
+          <p class="beyond__intro">Du temps sur le court, à la salle et sur des projets personnels.</p>
+        </header>
+
+        <div class="beyond-grid">
+          <article class="beyond-card beyond-card--project">
+            <button class="beyond-card__trigger" type="button" aria-expanded="false" aria-controls="beyond-project-details">
+              <span class="beyond-entry-number">01</span>
+              <span aria-hidden="true" class="beyond-card__visual beyond-card__visual--projects">
+
+<canvas class="beyond-neural-canvas" data-neural-network=""></canvas>
+</span>
+              <span class="beyond-entry-copy"><strong>Projets personnels</strong><span>Ce que je construis en dehors des cours.</span></span>
+              <span class="beyond-entry-open" aria-hidden="true">↗</span>
+            </button>
+
+            <dialog
+              class="beyond-modal beyond-modal--projects"
+              id="beyond-project-details"
+              aria-labelledby="beyond-project-modal-title"
+            >
+              <div class="beyond-modal__surface">
+                <button class="beyond-modal__close" type="button" aria-label="Fermer la fenêtre Projets personnels">
+                  <span aria-hidden="true"></span>
+                </button>
+                <header class="beyond-modal__header">
+                  <span>01 / Construire</span>
+                  <h3 id="beyond-project-modal-title">Projets personnels</h3>
+                  <p>J’aime développer des projets quand le sujet m’intéresse. Le sport, la finance ou une idée de site sont autant d’occasions de construire quelque chose et d’apprendre en le faisant.</p>
+                </header>
+                <div class="projects-journal">
+                  <a class="projects-github" href="https://github.com/AntoineGit31" target="_blank" rel="noopener noreferrer"><span>Retrouver mon code sur GitHub</span><strong>AntoineGit31 <span aria-hidden="true">↗</span></strong></a>
+                  <div class="projects-list">
+                    <article class="project-entry">
+                      <span class="project-entry__number" aria-hidden="true">01</span>
+                      <div class="project-entry__body"><p class="project-entry__context">Présentation de mes projets</p><h4>Mon portfolio</h4><p>Un site pour présenter mes projets et mon parcours, avec davantage de détails sur mes réalisations.</p><a href="https://antoine-goudedranche-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer">Explorer le portfolio <span aria-hidden="true">↗</span></a></div>
+                    </article>
+                    <article class="project-entry">
+                      <span class="project-entry__number" aria-hidden="true">02</span>
+                      <div class="project-entry__body"><p class="project-entry__context">Mon premier site</p><h4>Perf Tracker</h4><p>Mon premier site, consacré au suivi des performances sportives. Une façon de relier mon intérêt pour la musculation au développement web.</p><a href="https://perf-tracker.netlify.app/" target="_blank" rel="noopener noreferrer">Découvrir Perf Tracker <span aria-hidden="true">↗</span></a></div>
+                    </article>
+                    <article class="project-entry project-entry--unfinished">
+                      <span class="project-entry__number" aria-hidden="true">03</span>
+                      <div class="project-entry__body"><p class="project-entry__context">Finance &amp; Machine Learning · Projet inachevé</p><h4>BotBourse</h4><p>Un projet personnel autour de l’analyse des marchés financiers et du Machine Learning.</p><p>Il n’est pas entièrement terminé. J’aurais aimé pousser davantage la partie prédiction ML, mais je n’ai pas eu le temps de l’approfondir autant que je le souhaitais.</p><a href="https://botbourse.vercel.app/" target="_blank" rel="noopener noreferrer">Voir le projet en l’état <span aria-hidden="true">↗</span></a></div>
+                    </article>
+                  </div>
+                  <p class="projects-note">Certaines informations personnelles présentes sur ces sites peuvent ne plus être à jour. Ce CV constitue ma présentation actuelle.</p>
+                  <section class="projects-work" aria-labelledby="projects-work-title"><p class="project-entry__context">Projets réalisés en entreprise</p><h4 id="projects-work-title">Chez DNCA Finance</h4><p>Les projets que j’ai réalisés pendant mon stage en société de gestion sont détaillés dans mon rapport de stage. Il est disponible en cliquant sur la ligne « Stagiaire Assistant de Gestion – DNCA Finance, Paris Place Vendôme » dans le CV.</p><a href="#cv-dnca-trigger" data-project-dnca>Retrouver l’expérience dans le CV <span aria-hidden="true">↑</span></a></section>
+                </div>
+              </div>
+            </dialog>
+          </article>
+
+          <article class="beyond-card beyond-card--sport">
+            <button class="beyond-card__trigger" type="button" aria-expanded="false" aria-controls="beyond-sport-details">
+              <span class="beyond-entry-number">02</span>
+              <span aria-hidden="true" class="beyond-card__visual beyond-card__visual--sports">
+
+<span class="beyond-tennis-court">
+<i class="beyond-tennis-court__net"></i>
+<i class="beyond-tennis-court__service"></i>
+<i class="beyond-tennis-court__center"></i>
+<i class="beyond-tennis-ball"></i>
+</span>
+<span class="beyond-sport-divider"></span>
+<span class="beyond-strength-station">
+<span class="beyond-weight-stack">
+<span class="beyond-weight-disc beyond-weight-disc--green"></span>
+<span class="beyond-weight-disc beyond-weight-disc--yellow"></span>
+<span class="beyond-weight-disc beyond-weight-disc--blue"></span>
+<span class="beyond-weight-disc beyond-weight-disc--red"></span>
+</span>
+<span class="beyond-strength-base"></span>
+</span>
+</span>
+              <span class="beyond-entry-copy"><strong>Tennis &amp; musculation</strong><span>11 ans au club de Muret. 3 ans à la salle.</span></span>
+              <span class="beyond-entry-open" aria-hidden="true">↗</span>
+            </button>
+
+            <dialog
+              class="beyond-modal beyond-modal--sports"
+              id="beyond-sport-details"
+              aria-labelledby="beyond-sport-modal-title"
+            >
+              <div class="beyond-modal__surface">
+                <button class="beyond-modal__close" type="button" aria-label="Fermer la fenêtre Sports">
+                  <span aria-hidden="true"></span>
+                </button>
+                <header class="beyond-modal__header">
+                  <span>02 / Sports</span>
+                  <h3 id="beyond-sport-modal-title">Tennis &amp; musculation.</h3>
+                  <p>Du club de Muret à la salle de musculation.</p>
+                </header>
+                <div class="sport-journal">
+                  <section class="sport-court" aria-labelledby="sport-tennis-title">
+                    <div class="sport-court__heading">
+                      <div><span class="sport-eyebrow">01 / Sur le court</span><h4 id="sport-tennis-title">Tennis</h4></div>
+                      <p class="sport-years"><strong>11</strong><span>ans de pratique</span></p>
+                    </div>
+                    <div class="sport-court__scene" aria-hidden="true">
+                      <svg viewBox="0 0 620 260" fill="none" class="sport-court__drawing">
+                        <defs>
+                          <linearGradient id="sport-clay" x1="60" y1="30" x2="550" y2="230" gradientUnits="userSpaceOnUse"><stop stop-color="#a76443"/><stop offset="1" stop-color="#643a2c"/></linearGradient>
+                          <pattern id="sport-clay-grain" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2" cy="4" r=".7" fill="#f2ceb0" opacity=".18"/></pattern>
+                        </defs>
+                        <path d="M67 37H553V223H67Z" fill="url(#sport-clay)"/>
+                        <path d="M67 37H553V223H67Z" fill="url(#sport-clay-grain)"/>
+                        <g stroke="#f0ddc6" stroke-width="1.5" opacity=".8">
+                          <path d="M67 37H553V223H67Z M67 60H553 M67 200H553 M188 60V200 M432 60V200 M188 130H432 M67 124V136 M553 124V136"/>
+                        </g>
+                        <path d="M315 29V232" stroke="#251d18" stroke-width="8" opacity=".4"/>
+                        <path d="M310 29V232" stroke="#fcf3df" stroke-width="2" stroke-dasharray="3 2"/>
+                        <path class="sport-court__trail" stroke="#eceda5" stroke-width="2" stroke-linecap="round" opacity=".45"/>
+                        <ellipse class="sport-court__shadow" cx="58" cy="164" rx="4" ry="2" fill="#281d13" opacity=".4"/>
+                        <circle class="sport-court__impact" r="0" stroke="#f7e7c7" stroke-width="1.5" opacity="0"/>
+                        <g class="sport-court__racket sport-court__racket--left" transform="translate(48 164)" stroke="#efdfbb" stroke-width="2">
+                          <ellipse rx="10" ry="15" fill="#27372b"/><path d="M-6-11V11M0-14V14M6-11V11M-9-6H9M-10 0H10M-9 6H9" stroke-width=".6"/><path d="M0 15V32" stroke-width="4"/>
+                        </g>
+                        <g class="sport-court__racket sport-court__racket--right" transform="translate(572 90)" stroke="#efdfbb" stroke-width="2">
+                          <ellipse rx="10" ry="15" fill="#27372b"/><path d="M-6-11V11M0-14V14M6-11V11M-9-6H9M-10 0H10M-9 6H9" stroke-width=".6"/><path d="M0 15V32" stroke-width="4"/>
+                        </g>
+                        <g class="sport-court__ball" transform="translate(58 164)"><circle r="4.5" fill="#e5ef92"/><path d="M-3-3Q2 0-3 3" stroke="#fffde6" stroke-width="1"/></g>
+                      </svg>
+                      <span class="sport-court__caption">MURET · TENNIS</span>
+                    </div>
+                    <div class="sport-court__footer"><p><span>11 ans au club de Muret.</span><output class="sport-rally-status" aria-live="polite">Un échange en six frappes.</output></p><button type="button" class="sport-play" data-sport-rally aria-pressed="false"><span aria-hidden="true">↗</span> <span data-rally-label>Lancer un échange</span></button></div>
+                  </section>
+
+                  <section class="sport-strength" aria-labelledby="sport-strength-title">
+                    <header class="sport-strength__heading">
+                      <div><span class="sport-eyebrow">02 / À la salle</span><h4 id="sport-strength-title">Musculation</h4></div>
+                      <div class="sport-profile" aria-label="Pratique et mensurations"><p><strong>3</strong><span>ans de musculation</span></p><p><strong>1,75 <small>m</small></strong><span>taille</span></p><p><strong>68 <small>kg</small></strong><span>poids</span></p></div>
+                    </header>
+                    <div class="sport-performance">
+                      <div class="sport-performance__selector" role="group" aria-label="Choisir une performance">
+                        <span class="sport-eyebrow">Quelques performances</span>
+                        <button type="button" data-lift="bench" aria-pressed="true" aria-controls="sport-lift-detail"><span><small>01</small> Développé couché</span><strong>100 kg <i>× 4</i></strong></button>
+                        <button type="button" data-lift="press" aria-pressed="false" aria-controls="sport-lift-detail"><span><small>02</small> Presse à cuisses</span><strong>260 kg <i>× 6</i></strong></button>
+                        <button type="button" data-lift="extension" aria-pressed="false" aria-controls="sport-lift-detail"><span><small>03</small> Leg extension</span><strong>95 kg <i>× 8</i></strong></button>
+                        <button type="button" data-lift="curl" aria-pressed="false" aria-controls="sport-lift-detail"><span><small>04</small> Curl marteau</span><strong>26 kg <i>× 7</i></strong></button>
+                      </div>
+                      <div class="sport-lift" id="sport-lift-detail" aria-live="polite" aria-atomic="true">
+                        <span class="sport-eyebrow" data-lift-name>Développé couché</span>
+                        <p class="sport-lift__value"><strong data-lift-weight>100</strong><span>kg</span></p>
+                        <p class="sport-lift__reps" data-lift-reps>4 répétitions</p>
+                        <span class="sport-lift__index" aria-hidden="true" data-lift-index>01 / 04</span>
+                      </div>
+                    </div>
+                  </section>
+
+                  <section class="sport-next" aria-labelledby="sport-next-title"><span class="sport-next__symbol" aria-hidden="true">↗</span><div><span class="sport-eyebrow">Et ensuite ?</span><h4 id="sport-next-title">Peut-être, le bodybuilding.</h4><p>Dans quelques années, j’aimerais peut-être tenter le bodybuilding. Pour l’instant, c’est une envie à explorer au fil de ma progression.</p></div><span class="sport-next__tag">À plus long terme</span></section>
+                </div>
+              </div>
+            </dialog>
+          </article>
+
+          <article class="beyond-card beyond-card--gaming">
+            <button class="beyond-card__trigger" type="button" aria-expanded="false" aria-controls="beyond-gaming-details">
+              <span class="beyond-entry-number">03</span>
+              <span aria-hidden="true" class="beyond-card__visual beyond-card__visual--gaming">
+
+<span class="beyond-game-grid"></span>
+<span class="beyond-game-reticle">
+<i></i><i></i><i></i><i></i>
+</span>
+<span class="beyond-game-scan"></span>
+
+</span>
+              <span class="beyond-entry-copy"><strong>Jeux vidéo</strong><span>Une autre façon de passer mon temps libre.</span></span>
+              <span class="beyond-entry-open" aria-hidden="true">↗</span>
+            </button>
+
+            <dialog
+              class="beyond-modal beyond-modal--gaming"
+              id="beyond-gaming-details"
+              aria-labelledby="beyond-gaming-modal-title"
+            >
+              <div class="beyond-modal__surface">
+                <button class="beyond-modal__close" type="button" aria-label="Fermer la fenêtre Jeux vidéo">
+                  <span aria-hidden="true"></span>
+                </button>
+                <header class="beyond-modal__header">
+                  <span>03 / Jeux vidéo</span>
+                  <h3 id="beyond-gaming-modal-title">Jeux vidéo</h3>
+                  <p>Mes rangs sur cinq jeux compétitifs.</p>
+                </header>
+                <div class="gaming-gallery">
+                  <div class="gaming-ranks" role="group" aria-label="Choisir un jeu">
+                    <button type="button" data-game="valorant" aria-pressed="true" aria-controls="gaming-insignia"><img src="valorant.webp" alt="" width="60" height="60" /><span><strong>Valorant</strong><small>Immortal 2</small></span><span aria-hidden="true">↗</span></button>
+                    <button type="button" data-game="lol" aria-pressed="false" aria-controls="gaming-insignia"><img src="lol.png?v=276cd9ba" alt="" width="60" height="60" /><span><strong>League of Legends</strong><small>Diamant 3</small></span><span aria-hidden="true">↗</span></button>
+                    <button type="button" data-game="tft" aria-pressed="false" aria-controls="gaming-insignia"><img src="tft.png" alt="" width="60" height="60" /><span><strong>Teamfight Tactics</strong><small>Émeraude 1</small></span><span aria-hidden="true">↗</span></button>
+                    <button type="button" data-game="cs" aria-pressed="false" aria-controls="gaming-insignia"><img src="csgo.jpg" alt="" width="60" height="60" /><span><strong>Counter-Strike</strong><small>Aigle légendaire</small></span><span aria-hidden="true">↗</span></button>
+                    <button type="button" data-game="fortnite" aria-pressed="false" aria-controls="gaming-insignia"><img src="fortnite.webp?v=caa269b0" alt="" width="60" height="60" /><span><strong>Fortnite</strong><small>Champion</small></span><span aria-hidden="true">↗</span></button>
+                  </div>
+                  <figure class="gaming-insignia" id="gaming-insignia" aria-live="polite" aria-atomic="true">
+                    <div class="gaming-insignia__image"><img data-rank-image src="valorant.webp" alt="Insigne Immortal 2 de Valorant" width="360" height="300" /></div>
+                    <figcaption><span data-rank-game>Valorant</span><strong data-rank-title>Immortal 2</strong></figcaption>
+                    <div class="gaming-insignia__navigation"><span data-rank-number aria-hidden="true">01 / 05</span><div><button type="button" data-rank-prev aria-label="Afficher le jeu précédent">←</button><button type="button" data-rank-next aria-label="Afficher le jeu suivant">→</button></div></div>
+                  </figure>
+                </div>
+              </div>
+            </dialog>
+          </article>
+        </div>
+
+        <footer class="beyond__footer">
+          <a href="#scene">
+            Revenir au CV
+            <span aria-hidden="true">↑</span>
+          </a>
+        </footer>
+      </div>
+    </section>
+  </body>
+</html>
